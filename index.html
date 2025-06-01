@@ -13,8 +13,48 @@
 
   <link rel="icon" href="src/assets/logo-ml-removebg-preview.png" type="image/x-icon">
   <title>MARIA LUQUE</title>
+
+
+
+<style>
+  /* Keyframes de la animación: comienza con opacidad 0 y desplazado 20px hacia abajo, finalizando con opacidad 1 y en su posición normal */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Clase base para animar elementos */
+  .animate-fadeIn {
+    /* Estado inicial */
+    opacity: 0;
+    transform: translateY(20px);
+    
+    /* Animación en 2.5 segundos, con ease-out y final persistente */
+    animation: fadeInUp 2.5s ease-out forwards;
+  }
+
+  /* Clases para agregar retrasos opcionales */
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+</style>
+
+
+  
 </head>
-<body class="bg-[#fffefb]">
+<body class="  min-h-dvh animate-fadeIn delay-200 ">
 
   <!-- NAVBAR -->
   <nav class="bg-[#fffefb] border-gray-200">
@@ -125,6 +165,8 @@
 
 
 
+
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const words = ["ACCESORIOS", "TOTEBAG", "COLLARES", "SCRUNCHIES", "PULSERAS"];
@@ -147,12 +189,71 @@
           
           // Después de unos milisegundos remueve las clases para activar el fade in y el slide hacia la posición original
           setTimeout(() => {
-            changingText.classList.remove("opacity-0", "translate-y-[10px]");
-          }, 50);
+              changingText.classList.remove("opacity-0", "translate-y-[10px]");
+            }, 50);
         }, 1000);
       }, 3000);
     });
 </script>
+
+
+<div class=" bg-gradient-to-t from-[#fffefb] to-[#EFF3EA]">
+<div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
+    <button type="button" class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">All categories</button>
+    <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Shoes</button>
+    <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Bags</button>
+    <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Electronics</button>
+    <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Gaming</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-6">
+    <div class="grid gap-4">
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+        </div>
+        <div class="hover:scale-103 hover:contrast-105 transition">
+            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
+</div>
 
   <!-- Footer -->
   <footer class="bg-black bg-opacity-80 text-white py-6">
