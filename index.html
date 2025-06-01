@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="src/assets/logo-ml-removebg-preview.png" type="image/x-icon">
+  <title>MARIA LUQUE</title>
+</head>
+<body class="bg-[#FFFDF0]">
+
+  <!-- NAVBAR -->
+  <nav class="bg-[#FFFDF0] border-gray-200">
+    <div class="mx-auto max-w-screen-xl p-4 relative flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex justify-center md:justify-start w-auto pr-4">
+        <a href="index.html" class="flex items-center">
+          <img src="/src/assets/logo-ml-removebg-preview.png" class="h-20 md:h-32 w-auto object-contain" alt="Logo Maria Luque" />
+        </a>
+      </div>
+      <!-- Menú normal en desktop -->
+      <div class="hidden md:flex flex-1 justify-center">
+        <ul class="flex flex-row font-light mt-0 space-x-8 rtl:space-x-reverse text-sm" style="font-family: 'Bodoni Moda', serif; font-size: 1.4rem; line-height: 1;">
+          <li>
+            <a href="#" class="text-gray-900 dark:text-white hover:underline" aria-current="page">INICIO</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-900 dark:text-white hover:underline">PRODUCTOS</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-900 dark:text-white hover:underline">NOSOTROS</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-900 dark:text-white hover:underline">CONTACTANOS</a>
+          </li>
+        </ul>
+      </div>
+     
+      <!-- Botón hamburguesa solo en móvil -->
+      <button id="menu-toggle" class="md:hidden absolute right-4 top-6 text-3xl text-gray-900 focus:outline-none z-50">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Menú móvil lateral -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-[#FFFDF0] shadow-lg z-[9999] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 md:hidden">
+      <button id="menu-close" class="self-end text-3xl mb-8 text-gray-900 focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="flex flex-col gap-8 font-light text-lg" style="font-family: 'Bodoni Moda', serif;">
+        <li>
+          <a href="#" class="text-gray-900 hover:underline" aria-current="page">INICIO</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 hover:underline">PRODUCTOS</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 hover:underline">NOSOTROS</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 hover:underline">CONTACTANOS</a>
+        </li>
+        <li>
+          <a href="tel:5541251234" class="text-gray-500 hover:underline">(555) 412-1234</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Fondo oscuro al abrir menú -->
+    <div id="menu-backdrop" class="fixed inset-0 bg-black bg-opacity-40 z-[9998] hidden md:hidden"></div>
+  </nav>
+
+  <script>
+    // filepath: c:\Users\RafaelOlivares\Documents\Proyectos\sereno-atelier\index.html
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      menuBackdrop.classList.remove('hidden');
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      menuBackdrop.classList.add('hidden');
+    });
+
+    menuBackdrop.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      menuBackdrop.classList.add('hidden');
+    });
+  </script>
+
+  <!-- Botones flotantes redes sociales -->
+  <div class="fixed top-1/2 right-0 -translate-y-1/2 p-2.5 rounded-l-2xl flex flex-col items-center z-[2000] gap-4">
+    <a href="#" target="_blank" title="Instagram" class="text-gray-300 text-2xl my-2 transition-colors hover:text-gray-100">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="#" target="_blank" title="WhatsApp" class="text-gray-300 text-2xl my-2 transition-colors hover:text-gray-100">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <!-- Hero Section -->
+<section class="relative overflow-hidden h-80 flex items-center justify-center bg-gradient-to-b from-[#FFFDF0] to-[#EFF3EA]">
+  <div class="relative z-20 flex flex-col items-center justify-center w-full">
+    <h1 class="text-4xl tracking-tight leading-none md:text-5xl xl:text-6xl text-black text-center" style="font-family: 'Bodoni Moda', serif;">
+      MARIA LUQUE
+    </h1>
+    <!-- Texto con animación -->
+     <h1 id="changing-text" class="text-2xl md:text-3xl pt-4 text-black text-center transition-all duration-1000 ease-in-out opacity-100" style="font-family: 'Bodoni Moda', serif;">
+        ACCESORIOS
+      </h1>
+</div>
+</section>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const words = ["ACCESORIOS", "TOTEBAG", "COLLARES", "SCRUNCHIES", "PULSERAS"];
+      let index = 0;
+      const changingText = document.getElementById("changing-text");
+
+      setInterval(() => {
+        // Inicia la transición: desvanecer y mover hacia arriba
+        changingText.classList.add("opacity-0", "translate-y-[-10px]");
+        
+        // Espera a que la transición de fade out se complete (1000 ms)
+        setTimeout(() => {
+          index = (index + 1) % words.length;
+          changingText.textContent = words[index]; // Actualiza el texto
+
+          // Remueve la clase que mueve el texto hacia arriba
+          changingText.classList.remove("translate-y-[-10px]");
+          // Coloca el texto en estado inicial para la aparición: ligeramente por debajo
+          changingText.classList.add("translate-y-[10px]");
+          
+          // Después de unos milisegundos remueve las clases para activar el fade in y el slide hacia la posición original
+          setTimeout(() => {
+            changingText.classList.remove("opacity-0", "translate-y-[10px]");
+          }, 50);
+        }, 1000);
+      }, 3000);
+    });
+</script>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 text-white py-6">
+    <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-4 md:mb-0 text-center md:text-left">
+        &copy; 2025 MARIA LUQUE. Todos los derechos reservados.
+      </div>
+      <div class="flex space-x-4 justify-center">
+        <a href="#" target="_blank" title="Instagram" class="hover:text-pink-400">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a href="#" target="_blank" title="WhatsApp" class="hover:text-green-400">
+          <i class="fab fa-whatsapp fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
